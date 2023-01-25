@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [WineController::class, 'home'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/new', [WineController::class, 'new'])->middleware(['auth', 'verified'])->name('new');
+Route::get('/search', [WineController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
+Route::get('/mypage', [WineController::class, 'mypage'])->middleware(['auth', 'verified'])->name('mypage');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
