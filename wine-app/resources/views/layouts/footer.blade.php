@@ -11,7 +11,7 @@
       <x-responsive-nav-link :href="route('search')" :active="request()->routeIs('search')">
         Search
       </x-responsive-nav-link>
-      <x-responsive-nav-link :href="route('mypage')" :active="request()->routeIs('mypage')">
+      <x-responsive-nav-link :href="route('myPage')" :active="request()->routeIs('myPage')">
         Profile
       </x-responsive-nav-link>
     </div>

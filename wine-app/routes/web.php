@@ -28,7 +28,7 @@ Route::redirect('/', '/dashboard');
 Route::get('/dashboard', [WineController::class, 'home'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/new', [WineController::class, 'new'])->middleware(['auth', 'verified'])->name('new');
 Route::get('/search', [WineController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
-Route::get('/mypage', [WineController::class, 'mypage'])->middleware(['auth', 'verified'])->name('mypage');
+Route::get('/mypage', [WineController::class, 'myPage'])->middleware(['auth', 'verified'])->name('myPage');
 Route::get('/info', [WineController::class, 'info'])->middleware(['auth', 'verified'])->name('info');
 
 Route::middleware('auth')->group(function () {
