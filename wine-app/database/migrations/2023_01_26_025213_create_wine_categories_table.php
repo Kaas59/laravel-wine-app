@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('wine_categories', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('wine_id')->default(0);
+            $table->bigInteger('category_id')->default(0);
             $table->timestamps();
         });
     }

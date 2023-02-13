@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('list_lavels', function (Blueprint $table) {
+        Schema::create('list_ravels', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->bigInteger('user_id')->default(0);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('list_lavels');
+        Schema::dropIfExists('list_ravels');
     }
 };
