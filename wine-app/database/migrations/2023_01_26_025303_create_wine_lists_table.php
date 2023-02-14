@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('wine_lists', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('ravel_id')->default(0);
             $table->bigInteger('wine_id')->default(0);
         });
     }
