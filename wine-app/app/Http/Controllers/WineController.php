@@ -11,6 +11,7 @@ class WineController extends Controller
 {
     //
     public function home(){
+      // TODO: カテゴリのリストをDBから取得する
       $categories = [
         [ "id" => 1, 'name' => 'AAA', 'image' => 'romance.jpg'],
         [ "id" => 1, 'name' => 'AAA', 'image' => 'romance.jpg'],
@@ -44,7 +45,7 @@ class WineController extends Controller
         [[],[],[],[],[],[],[],[]],
         [[],[],[],[],[],[],[],[]],
       ];
-      
+
       return view('mypage', ['lists' => $lists, 'user' => $user]);
     }
 
