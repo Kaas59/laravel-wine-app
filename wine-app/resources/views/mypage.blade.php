@@ -17,11 +17,11 @@
     <div class="flex flex-col flex-nowrap overflow-y-scroll h-[59.5vh] w-[100vw] bg-slate-500">
       <div>
         @foreach($lists as $list)
-            <div class="h-[20vh] my-2">
-              <p class="m-2 ">ワインリスト<span class="mx-2">編集</span></p>
+            <div class="h-[40vh] my-2">
+              <p class="m-2 ">{{ $list[0] }}<span class="mx-2">編集</span></p>
               <div class="flex flex-nowrap overflow-x-scroll">
-                <div class="flex w-[calc(70% * {{ count($lists) }})] h-[15vh]">
-                  @include('components.list', $list)
+                <div class="flex w-[calc(100% * {{ count($lists) }})] h-[28vh]">
+                  @include('components.list', ['list' => $list[1]])
                 </div>
               </div>
             </div>

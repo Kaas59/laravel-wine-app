@@ -1,10 +1,6 @@
-<!-- <div class="h-full"> -->
-  <!-- <div class="flex flex-nowrap overflow-x-scroll"> -->
-    @foreach($list as $wine)
-      <div class="mx-3 w-[10vh] h-[15vh] bg-lime-200 p-1">
-        <img src="/wine/00001.png" class="">
-        <span>AAA</span>
-      </div>
-    @endforeach
-  <!-- </div> -->
-<!-- </div> -->
+@foreach($list as $wine)
+<a href="info?wine={{ $wine['id'] }}" class="mx-3 w-[10vh] h-[25vh] bg-white rounded p-1">
+  <img src="/wine/00001.png" class="" alt="{{ $wine['image'] }}">
+  <span class="text-xs">{{ $wine['name'] }}</span>
+</a>
+@endforeach

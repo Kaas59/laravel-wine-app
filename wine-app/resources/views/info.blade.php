@@ -8,31 +8,31 @@
       <div class="flex mb-3">
         <img src="/wine/00001.png" alt="" class="w-[40vw] mx-auto rounded-lg">
         <div class="my-3 flex flex-col justify-around">
-          <div>wine_color / wine_type</div>
-          <div>ワイン名</div>
-          <div><span class="star10_rating" data-rate="8"></span></div>
-          <div>AAA産</div>
+          <div>{{ $wine['color_id'] }} / {{ $wine['type_id'] }}</div>
+          <div>{{ $wine['name'] }}</div>
+          <div><span class="star10_rating" data-rate="{{ $wine['sommelier_point'] }}"></span></div>
+          <div>{{ $wine['country_id'] }}産</div>
         </div>
       </div>
       <div class="mb-3 mx-3 flex flex-col justify-around h-[15vh]">
         <div class="flex">
           <div class="w-[30%] text-center">品種</div>
-          <div class="w-[70%]">AAAA</div>
+          <div class="w-[70%]">{{ $wine['breed_id'] }}</div>
         </div>
         <div class="flex">
           <div class="w-[30%] text-center">ワイナリー</div>
-          <div class="w-[70%]">AAAA</div>
+          <div class="w-[70%]">{{ $wine['winery_id'] }}</div>
         </div>
         <div class="flex">
           <div class="w-[30%] text-center">インポーター</div>
-          <div class="w-[70%]">AAAA</div>
+          <div class="w-[70%]">{{ $wine['importer_id'] }}</div>
         </div>
       </div>
       <div class="border-b-2 w-auto mx-2"></div>
-      <div class="w-full border-r-green-100 text-white my-5 px-5">
+      <div class="w-full h-[30vh] border-r-green-100 text-white my-2 px-1">
         <div class="text-black">他にもこんなワインはいかがですか</div>
         <div class="flex flex-nowrap overflow-x-scroll mt-2">
-          <div class="flex w-[calc(70% * {{ count($list) }})] h-[15vh]">
+          <div class="flex w-[calc(100% * {{ count($list) }})] h-[15vh] text-black">
             @include('components.list', $list)
           </div>
         </div>
