@@ -1,0 +1,17 @@
+{
+  "name": "wine app",
+  "short_name": "wineapp",
+  "theme_color": "#9721f3",
+  "background_color": "#9721f3",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/wine_192.png",
+      "size": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
