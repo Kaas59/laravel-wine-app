@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="flex flex-col justify-around items-center w-screen bg-gradient-to-r from-cyan-500 to-blue-500 h-[60vw] ">
-      <image src="https://pbs.twimg.com/profile_images/1191321800757542912/CQ1BigB4_400x400.jpg" class="rounded-full w-[35vw] h-[35vw]">
+      <image src="https://pbs.twimg.com/profile_images/1191321800757542912/CQ1BigB4_400x400.jpg" class="rounded-full w-[35vw] h-[35vw] shadow-lg">
       <div class="text-3xl bold">{{ $user['name'] }}</div>
     </div>
     <div>
@@ -17,7 +17,7 @@
     <div class="flex flex-col flex-nowrap overflow-y-scroll h-[59.5vh] w-[100vw] bg-slate-500">
       <div>
         @foreach($lists as $list)
-            <div class="h-[40vh] my-2">
+            <div class="h-[30vh] my-2">
               <p class="m-2 ">{{ $list[0] }}<span class="mx-2">編集</span></p>
               <div class="flex flex-nowrap overflow-x-scroll">
                 <div class="flex w-[calc(100% * {{ count($lists) }})] h-[28vh]">
