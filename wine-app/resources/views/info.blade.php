@@ -4,7 +4,7 @@
             「{{ $category['name'] }}」な時におすすめ
         </h2>
     </x-slot>
-    <div class="bg-slate-500 h-[79.5vh] py-3 w-screen text-white">
+    <div class="h-[79.5vh] py-3 w-screen text-gray-800">
       <div class="flex px-3">
         <img src="/wine/00001.png" alt="" class="w-[40vw] mx-auto rounded-lg shadow-sm">
         <div class="my-3 flex flex-col justify-around px-3">

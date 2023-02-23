@@ -3,13 +3,13 @@
       <image src="/wine.png" class="rounded-full w-[35vw] h-[35vw] shadow-lg">
       <div class="text-3xl bold">{{ $user['name'] }}</div>
     </div>
-    <div class="bg-slate-500">
-      <div class="w-[100vw] h-auto text-center py-2 bg-slate-500/50 bg-gradient-to-t relative">
+    <div class="">
+      <div class="w-[100vw] h-auto text-center py-2 relative">
           <span class="text-2xl font-bold">マイリスト</span>
           <!-- <a href="/" class="absolute right-2 bg-blue-600 hover:bg-blue-500 text-white rounded px-3 py-1 shadow-sm">New</a> -->
           <button type="button" data-modal-target="modal" data-modal-show="modal" class="absolute right-2 bg-blue-600 hover:bg-blue-500 text-white rounded px-3 py-1 shadow-sm">New</button>
       </div>
-      <div class="flex flex-col flex-nowrap overflow-y-scroll h-[54vh] w-[100vw] bg-slate-500">
+      <div class="flex flex-col flex-nowrap overflow-y-scroll h-[54vh] w-[100vw] ">
         <div>
           @foreach($lists as $list)
               <div class="h-[32vh] my-2">
