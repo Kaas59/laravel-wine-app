@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class WineList extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['ravel_id', 'wine_id'];
 }
