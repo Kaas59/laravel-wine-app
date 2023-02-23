@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WineController;
+use App\Models\Wine;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,12 +26,20 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::redirect('/', '/dashboard');
+Route::middleware(['auth', 'verified'])->group(function(){
+  Route::get('/dashboard', [WineController::class, 'home'])->name('dashboard');
+  Route::get('/new', [WineController::class, 'new'])->name('new');
+  Route::get('/search', [WineController::class, 'search'])->name('search');
+  Route::get('/mypage', [WineController::class, 'myPage'])->name('myPage');
+  Route::get('/info/{id}', [WineController::class, 'info'])->name('info');
+});
+Route::middleware(['auth', 'verified'])->group(function(){
+  Route::get('/list/{id}', [WineController::class, 'editList'])->name('list.edit');
+  Route::post('/list', [WineController::class, 'createList'])->name('list.create');
+  Route::patch('/list', [WineController::class, 'addList'])->name('list.add');
+  Route::delete('/list', [WineController::class, 'destroyList'])->name('list.destroy');
+});
 
-Route::get('/dashboard', [WineController::class, 'home'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/new', [WineController::class, 'new'])->middleware(['auth', 'verified'])->name('new');
-Route::get('/search', [WineController::class, 'search'])->middleware(['auth', 'verified'])->name('search');
-Route::get('/mypage', [WineController::class, 'myPage'])->middleware(['auth', 'verified'])->name('myPage');
-Route::get('/info', [WineController::class, 'info'])->middleware(['auth', 'verified'])->name('info');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
