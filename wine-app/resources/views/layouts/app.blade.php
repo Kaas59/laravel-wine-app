@@ -13,9 +13,11 @@
         <link rel="manifest" href="manifest.json">
         <link rel="manifest" href="manifest.webmanifest" />
         <script async src="https://cdn.jsdelivr.net/npm/pwacompat" crossorigin="anonymous"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" /> -->
 
         <!-- Scripts -->
-        @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/sass/app.scss', 'resources/css/app.css', 'resources/js/app.ts'])
 
         <style>
           /* Star */
